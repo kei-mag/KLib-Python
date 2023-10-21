@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my-package" # TODO: Replace 'my-package' to new package name.
+description = "My Python Package" # TODO: Describe description.
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Keisuke Magara", email = "Keisuke-Magara.dev@outlook.com" },
+]
+keywords = []
+classifiers = ["Programming Language :: Python :: 3"]
+requires-python = ">=3.7"
+dynamic = ["version", "dependencies"]
+
+[project.urls]
+Source = "https://github.com/Keisuke-Magara/" # TODO: Replace repository URL
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.dynamic]
+version = { attr = "setuptools_scm.get_version" }
+dependencies = { file = ["requirements.txt"] }
+
+[tool.setuptools_scm]
+write_to = "src/my_package/_version.py" # TODO: Replace 'my_package' to new package name.
+version_scheme = "guess-next-dev"
+local_scheme = "no-local-version"
+
+[tool.black]
+line-length = 119
+
+[tool.isort]
+profile = "black"
+line_length = 119
+
+[tool.mypy]
+mypy_path = ["src"]
+disallow_incomplete_defs = true
