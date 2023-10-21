@@ -134,3 +134,6 @@ test.py
 
 # Visual Studio Code
 .vscode/
+
+# Package Version File
+src/*/_version.py
