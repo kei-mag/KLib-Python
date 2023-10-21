@@ -17,6 +17,9 @@ dynamic = ["version", "dependencies"]
 [project.urls]
 Source = "https://github.com/Keisuke-Magara/KLib-Python"
 
+[project.scripts]
+multibyte-resolver = "klib.replace_multibyte:cmd"
+
 [tool.setuptools]
 package-dir = { "" = "src" }
 
@@ -30,11 +33,11 @@ version_scheme = "guess-next-dev"
 local_scheme = "no-local-version"
 
 [tool.black]
-line-length = 119
+line-length = 120
 
 [tool.isort]
 profile = "black"
-line_length = 119
+line_length = 120
 
 [tool.mypy]
 mypy_path = ["src"]
